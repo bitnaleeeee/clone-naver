@@ -1,0 +1,79 @@
+// color
+$color-black: #333;
+
+// url
+$url-bg-btn: 'https://s.pstatic.net/static/www/m-new/uit/img/sp_main_search_f19096e8.png';
+
+// common
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+// header
+.header {
+    margin-top: 10px;
+    padding: 0 10px;
+    .home-menu-btn {
+        position: relative;
+        float: left;
+        border: none;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        &::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url($url-bg-btn) no-repeat;
+            background-size: 323px auto;
+            background-position: -52px -148px;
+        }
+    }
+    .utility-menu {
+        float: right;
+        & > a {
+            position: relative;
+            float: left;
+            display: block;
+            width: 40px;
+            height: 40px;
+            &::after {
+                content: '';
+                display: block;
+                width: 40px;
+                height: 40px;
+                background: url($url-bg-btn) no-repeat;
+                background-size: 323px auto;
+            }
+            &.naver-pay-btn::after {
+                background-position: -91px -194px;
+            }
+            &.naver-alarm-btn::after {
+                background-position: -46px -194px;
+            }
+            &.my-page-btn {
+                margin-left: 10px;
+                &::after {
+                    background-position: -96px -62px;
+                }
+            }
+        }
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
