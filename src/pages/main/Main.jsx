@@ -1,29 +1,46 @@
-import React from "react";
+import { React, useState } from "react";
 import Header from "../../components/Header";
+import SearchPopup from "../../popup/SearchPopup";
 import "./Main.scss";
 
 const Main = () => {
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false); 
+
+  /**
+   * 검색 팝업 오픈
+   * @param {object} e 이벤트 객체 
+   */
+  const openSearchPopup = (e) => {
+    setIsPopupOpen(!isPopupOpen);
+  }
+
   return (
     <>
       <Header />
 
+      <SearchPopup isPopupOpen={isPopupOpen} openSearchPopup={openSearchPopup} />
       <main className="main">
         <div className="search-wrap">
-          <div className="search-inner">
-            <h1 className="search-logo">
-              <a href="#!">
-                <span className="blind">네이버</span>
-              </a>
-            </h1>
-            <input
-              type="text"
-              className="search-input"
-              title="검색어 입력"
-              placeholder="검색어를 입력해주세요."
-            />
-            <button type="button" className="search-voice-btn">
-              <span className="blind">음성검색</span>
-            </button>
+          <div className="search-box">
+            <div className="search-inner">
+              <h1 className="search-logo">
+                <a href="#!">
+                  <span className="blind">네이버</span>
+                </a>
+              </h1>
+              <input
+                type="text"
+                className="search-input"
+                title="검색어 입력"
+                placeholder="검색어를 입력해주세요."
+                onFocus={openSearchPopup}
+                // onBlur={onBlurSearchInput}
+              />
+              <button type="button" className="search-voice-btn">
+                <span className="blind">음성검색</span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -328,9 +345,15 @@ const Main = () => {
               </div>
 
               <ul className="stock-link">
-                <li><a href="#!">국내증시</a></li>
-                <li><a href="#!">해외증시</a></li>
-                <li><a href="#!">경제지표</a></li>
+                <li>
+                  <a href="#!">국내증시</a>
+                </li>
+                <li>
+                  <a href="#!">해외증시</a>
+                </li>
+                <li>
+                  <a href="#!">경제지표</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -404,8 +427,6 @@ const Main = () => {
                 </ul>
               </div>
             </div>
-
-
 
             <div className="grid-box short-form-box">
               <div className="title-wrap">
@@ -490,9 +511,17 @@ const Main = () => {
 
             <div className="grid-box clip-box">
               <a href="#!">
-                <img src="https://s.pstatic.net/static/www/mobile/edit/20230619_1095/upload_168716426807622Q5G.png" alt="너는 항상 남들보다 한발 먼저 내디뎠지 총 10억 펀딩! 숏폼 크리에이터 모집" className="banner"/>
+                <img
+                  src="https://s.pstatic.net/static/www/mobile/edit/20230619_1095/upload_168716426807622Q5G.png"
+                  alt="너는 항상 남들보다 한발 먼저 내디뎠지 총 10억 펀딩! 숏폼 크리에이터 모집"
+                  className="banner"
+                />
                 <div className="info">
-                  <img src="https://s.pstatic.net/static/www/mobile/edit/20230619_1095/upload_1687164228849Rz6eE.png" alt="" className="logo-img" />
+                  <img
+                    src="https://s.pstatic.net/static/www/mobile/edit/20230619_1095/upload_1687164228849Rz6eE.png"
+                    alt=""
+                    className="logo-img"
+                  />
                   <div className="info-sub">
                     <strong>네이버 Clip</strong>
                     <p>네이버 숏폼 클립 크리에이터 모집 중</p>
