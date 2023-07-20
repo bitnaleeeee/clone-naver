@@ -1,0 +1,183 @@
+
+{
+    "subMenu": [
+        {
+            "name": "뉴스판",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_1683512720230Vr2gk.png"
+        },
+        {
+            "name": "쇼핑판",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_1683512791912c66Bt.png"
+        },
+        {
+            "name": "경제판",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_1683512696361X4su0.png"
+        },
+        {
+            "name": "스포츠판",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_16835128325991gQ16.png"
+        },
+        {
+            "name": "메일",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230509_0/upload_1683614331473O5jI4.png"
+        },
+        {
+            "name": "카페",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230509_0/upload_1683615368135Oq7ZA.png"
+        },
+        {
+            "name": "블로그",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/20230509_0/upload_16836153967537rYTc.png"
+        },
+        {
+            "name": "더보기",
+            "imgSrc": "https://s.pstatic.net/static/www/mobile/edit/2021/0427/upload_1619497854375Q53rw.png"
+        }
+    ],
+    "weatherData": {
+        "img": "https://s.pstatic.net/static/www/m-new/uit/img/sp_weather_animation_05cf64fb.png",
+        
+        "temperature": {
+            "position": "서울",
+            "value": 26.8
+        },
+        "dust": {
+            "value": 0,
+            "bigValue": 3
+        }
+    },
+    "shoppingData": [
+        {
+            "time": {
+                "hours": 11,
+                "minutes": 15
+            },
+            "img": "https://s.pstatic.net/selected.phinf/MjAyMzA2MTRfMTQ4/MDAxNjg2NzE2Nzg5NTA3.1YT0Bp6tQPDzMUCa7ZoaYlWEh4yXPqaK8x264iMgvgEg.lAS8ZeVi4ASp0DqoMgt1iYnSAAjm_QcwE1UkxteK8A0g.PNG/image.png?type=f258_258_q90",
+            "info": "방문판매 정경미 CJ제일제당에서 나왔습니다",
+            "user": {
+                "img": "https://s.pstatic.net/selected.phinf/MjAyMjA5MDVfMjk3/MDAxNjYyMzY4OTMxNTM3.qjjyEvFLg66XKHIAjZxJOz5liGPlZXutJFIk_OFyBwkg.Hhty0K6uOyTzbImPy5YwUMsBQUFw1bpCj4SKsAMWIwMg.JPEG/image.jpg?type=f54_54_q90",
+                "name": "방문판매 정경미"
+            }
+        },
+        {
+            "time": {
+                "hours": 22,
+                "minutes": 44
+            },
+            "img": "https://s.pstatic.net/selected.phinf/MjAyMzA2MTRfMjAw/MDAxNjg2NzA2OTY1NTQ0.YhPJS-WWDIe4zVeWStVWMZ6oR6sSgGVfD5iDTCoPbHkg.AckFaoIXRt_QVSZaLX7PnUqEcqa0-3YeZJMPlOnAP4cg.PNG/image.png?type=f258_258_q90",
+            "info": "이디야커피x산리오 콜라보♥_치팅데이",
+            "user": {
+                "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fg-selected.pstatic.net%2FMjAyMTA3MzBfMjg5%2FMDAxNjI3NjI1NzA4NDk4.GhSc5e74dvJn74nxR88ck255heNYLQ4MkruYPj-BNz8g.7htz1GnfHiNV5RpH8YqzqXt6IfyO8fQSDc8RCC89qhsg.JPEG%2Fimage.jpg%22&service=selective&type=f54_54_q90",
+                "name": "리코"
+            }
+        },
+        {
+            "time": {
+                "hours": 6,
+                "minutes": 2
+            },
+            "img": "https://s.pstatic.net/selected.phinf/MjAyMzA2MTlfMjc2/MDAxNjg3MTY2NDUzNDQx.gbDYV6cc894Y-IDKh8jgADEtSSEEXRP6Z_o76rZxJlYg.S1q41FfHgA6d6jXb_p1KExmUvVpNWqRHj2JurdK9YSEg.JPEG/image.jpg?type=f258_258_q90",
+            "info": "[신상EAT쇼] 네추럴라이즈X노티드 꾸미 영양제 신상!",
+            "user": {
+                "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fg-selected.pstatic.net%2FMjAyMTAxMjZfMjIx%2FMDAxNjExNjE1MzQ3NDQx.Uh_X-AjdjzlRjZuJTlq2JDsgVj_tyXEKiYKeXEHjlgwg.im8ie3H6Kdg2_kKGMrlCKZq26hN59mfmRutwIF7SfOog.JPEG%2Fimage.jpg%22&service=selective&type=f54_54_q90",
+                "name": "미미언니 노금미"
+            }
+        },
+        {
+            "time": {
+                "hours": 4,
+                "minutes": 2
+            },
+            "img": "https://s.pstatic.net/selected.phinf/MjAyMzA2MDlfNzEg/MDAxNjg2MjkwNTUyNDU3.ixPWsnE4XrauuN_7jCtCF37XsvarQNk40Zv8vdsrG3Ig.hvr417Webd6VN1UoctTWK58wfpU4ZIGWFrck-ItgVIQg.JPEG/image.jpg?type=f258_258_q90",
+            "info": "[슈퍼위크] 비스포크 그랑데AI 세탁기건조기 라이브",
+            "user": {
+                "img": "https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fshop1.phinf.naver.net%2F20200806_273%2F1596701799362OwRSa_PNG%2F120009051954483891_1605415639.png%22&service=selective&type=f54_54_q90",
+                "name": "삼성전자 브랜드스토어"
+            }
+        }
+    ],
+    "stockData": [
+        {
+            "name": "kospi",
+            "value": {
+                "yesterday": 257010,
+                "today": 207010
+            }
+        },
+        {
+            "name": "Kosdaq",
+            "value": {
+                "yesterday": 87272,
+                "today": 89288
+            }
+        },
+        {
+            "name": "nasdaq",
+            "value": {
+                "yesterday": 257010,
+                "today": 227010
+            }
+        },
+        {
+            "name": "s&p",
+            "value": {
+                "yesterday": 87261,
+                "today": 89222
+            }
+        }
+    ],
+    "nowData": [
+        {
+            "state": "live",
+            "img": "https://s.pstatic.net/tvcast.phinf/20230621_136/h9RGu_1687332970316PIjsi_PNG/1687332970154.png?type=m180_240",
+            "info": "장동윤X오대환 악마들 무비토크"
+        },
+        {
+            "state": "dday",
+            "img": "https://s.pstatic.net/tvcast.phinf/20230616_237/JinRc_1686892655074rBMA1_PNG/1686892655019.png?type=m180_240",
+            "info": "📌6/22 10PM 토크쇼 선공개"
+        },
+        {
+            "state": null,
+            "img": "https://s.pstatic.net/tvcast.phinf/20230621_146/3i63G_1687324200114u1M0k_JPEG/1687324200022.jpg?type=m180_240",
+            "info": "두시의 데이트 재재입니다❣"
+        },
+        {
+            "state": null,
+            "img": "https://s.pstatic.net/tvcast.phinf/20230622_99/5DpGT_1687408374437Dq2bB_PNG/1687408374354.png?type=m180_240",
+            "info": "📌오늘 낮 12시 김병철 인터뷰"
+        },
+        {
+            "state": null,
+            "img": "https://s.pstatic.net/tvcast.phinf/20230620_259/qYEeL_1687244282273ymkTK_PNG/1687244282168.png?type=m180_240",
+            "info": "범죄도시3 흥행감사GV"
+        }
+    ],
+    "shortData": [
+        {
+            "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20230612_88%2FcKYqA_1686537519966rFoBa_PNG%2F1686537515187.png%22&type=f264_396_q90&service=navermain",
+            "info": "세상 모든 반짝이는 이모지는 💎티파니✨ 거예요 [범죄도시3]",
+            "name": "씨네플레이 CINEPLAY"
+        },
+        {
+            "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fmoment-phinf.pstatic.net%2FMjAyMzA2MTFfMjEx%2FMDAxNjg2NDkwMTc4NDE5.WcSXVM2BekHotjJKlaZKFiLLAm5wc9_pvkWRu6DEAAgg.vZuGpp5AZfGVnixbwA_tvwWlcWT-9gFlJa9DyFYe92Eg.JPEG%2F4EA44604-AE2C-4065-A414-EA55B5E40DD6.jpg%22&type=f264_396_q90&service=navermain",
+            "info": "용산 도토리카페입니다:) 지브리느낌 가득한 카페에요.",
+            "name": "뭐라도 해야지"
+        },
+        {
+            "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20230530_298%2FqcIST_1685425386480mPeRN_JPEG%2F1685425384938.jpeg%22&type=f264_396_q90&service=navermain",
+            "info": "전소연 프로듀서님과 함께 Queencard 🤘 #QueencardChallenge",
+            "name": "FANTASYBOYS - 방과후 설렘 시즌2 LIVE"
+        },
+        {
+            "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fvideo-phinf.pstatic.net%2F20230611_131%2F1686444999037wfEg4_JPEG%2Fcb2f789f-07f2-11ee-9971-48df37ae3dc4_01.jpg%22&type=f264_396_q90&service=navermain",
+            "info": "귀한컬러! 슬림핏그레이팬츠",
+            "name": "coolmood"
+        },
+        {
+            "img": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20230526_97%2F7dwfV_1685082790940zA6WF_JPEG%2Fe9269165-fb8e-11ed-837b-505dac8c3721_03.jpg%22&type=f264_396_q90&service=navermain",
+            "info": "Box Interview : 백호의 귀염뽀짝 모먼트 🐯😘❣️",
+            "name": "2023 Weverse Con Festival"
+        }
+    ]
+}

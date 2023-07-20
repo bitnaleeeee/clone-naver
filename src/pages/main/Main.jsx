@@ -364,7 +364,7 @@ const Main = () => {
               <div className="title-wrap">
                 <h3 className="title">
                   <span className="title-sub-img now"></span>
-                  <span className="blind">쇼핑 LIVE</span>
+                  <span className="blind">티비 방영</span>
                 </h3>
                 <a href="#!" className="link">
                   편성표
