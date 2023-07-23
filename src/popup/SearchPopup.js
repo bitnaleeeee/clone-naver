@@ -8,7 +8,7 @@ let timer = null;
 const SearchPopup = (props) => {
   const { isPopupOpen, openSearchPopup } = props;
   const [searchData, setSearchData] = useState([]);
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState("");
 
   const focusRef = useRef();
   useEffect(() => {
@@ -63,7 +63,7 @@ const SearchPopup = (props) => {
 
     if (str.length > 0) {
       let blank_pattern = /^\s+|\s+$/g;
-      if (str.replace(blank_pattern, '') === '') {
+      if (str.replace(blank_pattern, "") === "") {
         return false;
       }
 
@@ -72,7 +72,6 @@ const SearchPopup = (props) => {
       timer = setTimeout(function () {
         callAPI(str);
       }, 300);
-
     } else {
       setSearchData([]);
     }
@@ -102,14 +101,17 @@ const SearchPopup = (props) => {
           {searchData.length ? (
             <ul className="result-list">
               {searchData.map((item, idx) => {
-
                 if (idx <= 10) {
                   return (
                     <li key={idx}>
                       <button type="button" className="search-btn">
                         <span className="blind">검색</span>
                       </button>
-                      <a href="#!" className="text" dangerouslySetInnerHTML={{ __html: item.sickNm }} />
+                      <a
+                        href="#!"
+                        className="text"
+                        dangerouslySetInnerHTML={{ __html: item.sickNm }}
+                      />
                       <button type="button" className="auto-set-btn">
                         <span className="blind">키워드 자동완성</span>
                       </button>

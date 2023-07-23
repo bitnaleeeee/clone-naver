@@ -1,25 +1,36 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import Header from "../../components/Header";
 import SearchPopup from "../../popup/SearchPopup";
 import "./Main.scss";
 
 const Main = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [data, setData] = useState([]);
 
-  const [isPopupOpen, setIsPopupOpen] = useState(false); 
+  useEffect(() => {
+    fetch(`http://localhost:3000/data/mock.json`)
+      .then((response) => response.json())
+      .then((result) => {
+        setData(result);
+      });
+  }, []);
 
   /**
    * 검색 팝업 오픈
-   * @param {object} e 이벤트 객체 
+   * @param {object} e 이벤트 객체
    */
   const openSearchPopup = (e) => {
     setIsPopupOpen(!isPopupOpen);
-  }
+  };
 
   return (
     <>
       <Header />
 
-      <SearchPopup isPopupOpen={isPopupOpen} openSearchPopup={openSearchPopup} />
+      <SearchPopup
+        isPopupOpen={isPopupOpen}
+        openSearchPopup={openSearchPopup}
+      />
       <main className="main">
         <div className="search-wrap">
           <div className="search-box">
