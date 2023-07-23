@@ -26,7 +26,7 @@ const Main = () => {
   return (
     <>
       <Header />
-
+      {data.weatherData && console.log(data.weatherData)}
       <SearchPopup
         isPopupOpen={isPopupOpen}
         openSearchPopup={openSearchPopup}
@@ -57,78 +57,30 @@ const Main = () => {
 
         <div className="sub-menu-wrap">
           <ul className="sub-menu-list">
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_1683512720230Vr2gk.png"
-                  alt=""
-                />
-                <span>뉴스판</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_1683512791912c66Bt.png"
-                  alt=""
-                />
-                <span>쇼핑판</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_1683512696361X4su0.png"
-                  alt=""
-                />
-                <span>경제판</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230508_0/upload_16835128325991gQ16.png"
-                  alt=""
-                />
-                <span>스포츠판</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230509_0/upload_1683614331473O5jI4.png"
-                  alt=""
-                />
-                <span>메일</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230509_0/upload_1683615368135Oq7ZA.png"
-                  alt=""
-                />
-                <span>카페</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/20230509_0/upload_16836153967537rYTc.png"
-                  alt=""
-                />
-                <span>블로그</span>
-              </a>
-            </li>
-            <li>
-              <a href="#!">
-                <img
-                  src="https://s.pstatic.net/static/www/mobile/edit/2021/0427/upload_1619497854375Q53rw.png"
-                  alt=""
-                />
-                <span>더보기</span>
-              </a>
-            </li>
+            {data.subMenu &&
+              data.subMenu.map((item, idx) => {
+                return (
+                  <li key={idx}>
+                    <a href="#!">
+                      <img src={item.imgSrc} alt="" />
+                      <span>{item.name}</span>
+                    </a>
+                  </li>
+                );
+              })}
+
+            {/* 
+            {data.subMenu &&
+              data.subMenu.map((item, idx) => {
+                console.log(item);
+              })}
+
+            {data.subMenu
+              ? data.subMenu.map((item, idx) => {
+                  console.log(item);
+                })
+              : ""} 
+              */}
           </ul>
         </div>
 
