@@ -26,7 +26,7 @@ const Main = () => {
   return (
     <>
       <Header />
-      {data.weatherData && console.log(data.weatherData)}
+
       <SearchPopup
         isPopupOpen={isPopupOpen}
         openSearchPopup={openSearchPopup}
@@ -101,7 +101,11 @@ const Main = () => {
                 <div className="bg-img"></div>
                 <div className="info">
                   <div className="info-title">
-                    <span className="temperature">26.8°</span>서울
+                    <span className="temperature">
+                      {" "}
+                      {data.weatherData && data.weatherData.temperature.value}
+                    </span>
+                    {data.weatherData && data.weatherData.temperature.position}
                   </div>
                   <div className="info-sub">
                     미세<span className="state good">좋음</span> · 초미세
@@ -130,114 +134,43 @@ const Main = () => {
                 </a>
               </div>
               <ul className="shopping-list">
-                <li>
-                  <div className="img-box">
-                    <span className="time">오전 11:00</span>
-                    <img
-                      src="https://s.pstatic.net/selected.phinf/MjAyMzA2MTRfMTQ4/MDAxNjg2NzE2Nzg5NTA3.1YT0Bp6tQPDzMUCa7ZoaYlWEh4yXPqaK8x264iMgvgEg.lAS8ZeVi4ASp0DqoMgt1iYnSAAjm_QcwE1UkxteK8A0g.PNG/image.png?type=f258_258_q90"
-                      alt=""
-                    />
-                  </div>
-                  <div className="info-box">
-                    <div className="title">
-                      방문판매 정경미 CJ제일제당에서 나왔습니다
-                    </div>
-                    <div className="title-sub">정경미 출연</div>
-                    <div className="autor">
-                      <span className="logo">
-                        <img
-                          src="https://s.pstatic.net/selected.phinf/MjAyMjA5MDVfMjk3/MDAxNjYyMzY4OTMxNTM3.qjjyEvFLg66XKHIAjZxJOz5liGPlZXutJFIk_OFyBwkg.Hhty0K6uOyTzbImPy5YwUMsBQUFw1bpCj4SKsAMWIwMg.JPEG/image.jpg?type=f54_54_q90"
-                          alt=""
-                        />
-                      </span>
-                      <span className="name">방문판매 정경미</span>
-                    </div>
-                  </div>
-                  <button type="button" className="alarm">
-                    <span className="blind">알람설정</span>
-                  </button>
-                </li>
-                <li>
-                  <div className="img-box">
-                    <span className="time">오전 11:00</span>
-                    <img
-                      src="https://s.pstatic.net/selected.phinf/MjAyMzA2MTRfMjAw/MDAxNjg2NzA2OTY1NTQ0.YhPJS-WWDIe4zVeWStVWMZ6oR6sSgGVfD5iDTCoPbHkg.AckFaoIXRt_QVSZaLX7PnUqEcqa0-3YeZJMPlOnAP4cg.PNG/image.png?type=f258_258_q90"
-                      alt=""
-                    />
-                  </div>
-                  <div className="info-box">
-                    <div className="title">
-                      이디야커피x산리오 콜라보♥_치팅데이
-                    </div>
-                    <div className="title-sub">아메리카노 기프티콘 증정</div>
-                    <div className="autor">
-                      <span className="logo">
-                        <img
-                          src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fg-selected.pstatic.net%2FMjAyMTA3MzBfMjg5%2FMDAxNjI3NjI1NzA4NDk4.GhSc5e74dvJn74nxR88ck255heNYLQ4MkruYPj-BNz8g.7htz1GnfHiNV5RpH8YqzqXt6IfyO8fQSDc8RCC89qhsg.JPEG%2Fimage.jpg%22&service=selective&type=f54_54_q90"
-                          alt=""
-                        />
-                      </span>
-                      <span className="name">리코</span>
-                    </div>
-                  </div>
-                  <button type="button" className="alarm">
-                    <span className="blind">알람설정</span>
-                  </button>
-                </li>
-                <li>
-                  <div className="img-box">
-                    <span className="time">오전 11:00</span>
-                    <img
-                      src="https://s.pstatic.net/selected.phinf/MjAyMzA2MTlfMjc2/MDAxNjg3MTY2NDUzNDQx.gbDYV6cc894Y-IDKh8jgADEtSSEEXRP6Z_o76rZxJlYg.S1q41FfHgA6d6jXb_p1KExmUvVpNWqRHj2JurdK9YSEg.JPEG/image.jpg?type=f258_258_q90"
-                      alt=""
-                    />
-                  </div>
-                  <div className="info-box">
-                    <div className="title">
-                      [신상EAT쇼] 네추럴라이즈X노티드 꾸미 영양제 신상!
-                    </div>
-                    <div className="title-sub">쇼호스트 노금미 출연</div>
-                    <div className="autor">
-                      <span className="logo">
-                        <img
-                          src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fg-selected.pstatic.net%2FMjAyMTAxMjZfMjIx%2FMDAxNjExNjE1MzQ3NDQx.Uh_X-AjdjzlRjZuJTlq2JDsgVj_tyXEKiYKeXEHjlgwg.im8ie3H6Kdg2_kKGMrlCKZq26hN59mfmRutwIF7SfOog.JPEG%2Fimage.jpg%22&service=selective&type=f54_54_q90"
-                          alt=""
-                        />
-                      </span>
-                      <span className="name">미미언니 노금미</span>
-                    </div>
-                  </div>
-                  <button type="button" className="alarm">
-                    <span className="blind">알람설정</span>
-                  </button>
-                </li>
-                <li>
-                  <div className="img-box">
-                    <span className="time">오전 11:00</span>
-                    <img
-                      src="https://s.pstatic.net/selected.phinf/MjAyMzA2MDlfNzEg/MDAxNjg2MjkwNTUyNDU3.ixPWsnE4XrauuN_7jCtCF37XsvarQNk40Zv8vdsrG3Ig.hvr417Webd6VN1UoctTWK58wfpU4ZIGWFrck-ItgVIQg.JPEG/image.jpg?type=f258_258_q90"
-                      alt=""
-                    />
-                  </div>
-                  <div className="info-box">
-                    <div className="title">
-                      [슈퍼위크] 비스포크 그랑데AI 세탁기건조기 라이브
-                    </div>
-                    <div className="title-sub">10만명 라이브 시청</div>
-                    <div className="autor">
-                      <span className="logo">
-                        <img
-                          src="https://s.pstatic.net/dthumb.phinf/?src=%22http%3A%2F%2Fshop1.phinf.naver.net%2F20200806_273%2F1596701799362OwRSa_PNG%2F120009051954483891_1605415639.png%22&service=selective&type=f54_54_q90"
-                          alt=""
-                        />
-                      </span>
-                      <span className="name">삼성전자 브랜드스토어</span>
-                    </div>
-                  </div>
-                  <button type="button" className="alarm">
-                    <span className="blind">알람설정</span>
-                  </button>
-                </li>
+                {data.shoppingData &&
+                  data.shoppingData.map((item, idx) => {
+                    return (
+                      <li key={idx}>
+                        <div className="img-box">
+                          <span className="time">
+                            오전 {item && data.shoppingData[idx].time.hours}:{" "}
+                            {item && data.shoppingData[idx].time.minutes}
+                          </span>
+                          <img
+                            src={item && data.shoppingData[idx].img}
+                            alt=""
+                          />
+                        </div>
+                        <div className="info-box">
+                          <div className="title">
+                            {item && data.shoppingData[idx].info}{" "}
+                          </div>
+                          <div className="title-sub">정경미 출연</div>
+                          <div className="autor">
+                            <span className="logo">
+                              <img
+                                src={item && data.shoppingData[idx].user.img}
+                                alt=""
+                              />
+                            </span>
+                            <span className="name">
+                              {item && data.shoppingData[idx].user.name}
+                            </span>
+                          </div>
+                        </div>
+                        <button type="button" className="alarm">
+                          <span className="blind">알람설정</span>
+                        </button>
+                      </li>
+                    );
+                  })}
               </ul>
               <div className="shopping-ad">
                 <div className="img">
@@ -268,42 +201,25 @@ const Main = () => {
             <div className="grid-box stock-box">
               <div className="stock-list">
                 <ul className="stock-list-inner">
-                  <li>
-                    <strong className="title">코스피</strong>
-                    <strong className="price">2,570.10</strong>
-                    <div className="info down">
-                      <span className="info-sub01">▼</span>
-                      <span className="info-sub02">23.60</span>
-                      <span className="info-sub03">-0.91%</span>
-                    </div>
-                  </li>
-                  <li>
-                    <strong className="title">코스닥</strong>
-                    <strong className="price">872.72</strong>
-                    <div className="info up">
-                      <span className="info-sub01">▲</span>
-                      <span className="info-sub02">3.66</span>
-                      <span className="info-sub03">+0.42%</span>
-                    </div>
-                  </li>
-                  <li>
-                    <strong className="title">나스닥100 선물</strong>
-                    <strong className="price">2,570.10</strong>
-                    <div className="info down">
-                      <span className="info-sub01">▼</span>
-                      <span className="info-sub02">23.60</span>
-                      <span className="info-sub03">-0.91%</span>
-                    </div>
-                  </li>
-                  <li>
-                    <strong className="title">S&P500 선물</strong>
-                    <strong className="price">872.72</strong>
-                    <div className="info up">
-                      <span className="info-sub01">▲</span>
-                      <span className="info-sub02">3.66</span>
-                      <span className="info-sub03">+0.42%</span>
-                    </div>
-                  </li>
+                  {data.stockData &&
+                    data.stockData.map((item, idx) => {
+                      return (
+                        <li key={idx}>
+                          <strong className="title">
+                            {" "}
+                            {item && data.stockData[idx].name}
+                          </strong>
+                          <strong className="price">
+                            {item && data.stockData[idx].value.yesterday}
+                          </strong>
+                          <div className="info down">
+                            <span className="info-sub01">▼</span>
+                            <span className="info-sub02">23.60</span>
+                            <span className="info-sub03">-0.91%</span>
+                          </div>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
 
@@ -335,58 +251,31 @@ const Main = () => {
               </div>
               <div className="now-list">
                 <ul className="now-list-inner">
-                  <li>
-                    <a href="#!">
-                      <span className="state live">LIVE</span>
-                      <img
-                        src="https://s.pstatic.net/tvcast.phinf/20230621_136/h9RGu_1687332970316PIjsi_PNG/1687332970154.png?type=m180_240"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">장동윤X오대환 악마들 무비토크</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <span className="state d-day">D-day</span>
-                      <img
-                        src="https://s.pstatic.net/tvcast.phinf/20230616_237/JinRc_1686892655074rBMA1_PNG/1686892655019.png?type=m180_240"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">📌6/22 10PM 토크쇼 선공개</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/tvcast.phinf/20230621_146/3i63G_1687324200114u1M0k_JPEG/1687324200022.jpg?type=m180_240"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">두시의 데이트 재재입니다❣</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/tvcast.phinf/20230622_99/5DpGT_1687408374437Dq2bB_PNG/1687408374354.png?type=m180_240"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">📌오늘 낮 12시 김병철 인터뷰</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/tvcast.phinf/20230620_259/qYEeL_1687244282273ymkTK_PNG/1687244282168.png?type=m180_240"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">범죄도시3 흥행감사GV</p>
-                    </a>
-                  </li>
+                  {data.nowData &&
+                    data.nowData.map((item, idx) => {
+                      return (
+                        <li key={idx}>
+                          <a href="#!">
+                            <span
+                              className={
+                                data.nowData[idx].state && "state live"
+                              }
+                            >
+                              {item && data.nowData[idx].state}
+                            </span>
+                            <img
+                              src={item && data.nowData[idx].img}
+                              alt=""
+                              className="img"
+                            />
+                            <p className="info">
+                              {" "}
+                              {item && data.nowData[idx].info}
+                            </p>
+                          </a>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
             </div>
@@ -401,73 +290,27 @@ const Main = () => {
               </div>
               <div className="short-form-list">
                 <ul className="short-form-list-inner">
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20230612_88%2FcKYqA_1686537519966rFoBa_PNG%2F1686537515187.png%22&type=f264_396_q90&service=navermain"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">
-                        세상 모든 반짝이는 이모지는 💎티파니✨ 거예요
-                        [범죄도시3]
-                      </p>
-                      <p className="brand">씨네플레이 CINEPLAY</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fmoment-phinf.pstatic.net%2FMjAyMzA2MTFfMjEx%2FMDAxNjg2NDkwMTc4NDE5.WcSXVM2BekHotjJKlaZKFiLLAm5wc9_pvkWRu6DEAAgg.vZuGpp5AZfGVnixbwA_tvwWlcWT-9gFlJa9DyFYe92Eg.JPEG%2F4EA44604-AE2C-4065-A414-EA55B5E40DD6.jpg%22&type=f264_396_q90&service=navermain"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">
-                        용산 도토리카페입니다:) 지브리느낌 가득한 카페에요.
-                      </p>
-                      <p className="brand">뭐라도 해야지</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20230530_298%2FqcIST_1685425386480mPeRN_JPEG%2F1685425384938.jpeg%22&type=f264_396_q90&service=navermain"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">
-                        전소연 프로듀서님과 함께 Queencard 🤘
-                        #QueencardChallenge
-                      </p>
-                      <p className="brand">
-                        FANTASYBOYS - 방과후 설렘 시즌2 LIVE
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fvideo-phinf.pstatic.net%2F20230611_131%2F1686444999037wfEg4_JPEG%2Fcb2f789f-07f2-11ee-9971-48df37ae3dc4_01.jpg%22&type=f264_396_q90&service=navermain"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">귀한컬러! 슬림핏그레이팬츠</p>
-                      <p className="brand">coolmood</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!">
-                      <img
-                        src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20230526_97%2F7dwfV_1685082790940zA6WF_JPEG%2Fe9269165-fb8e-11ed-837b-505dac8c3721_03.jpg%22&type=f264_396_q90&service=navermain"
-                        alt=""
-                        className="img"
-                      />
-                      <p className="info">
-                        Box Interview : 백호의 귀염뽀짝 모먼트 🐯😘❣️
-                      </p>
-                      <p className="brand">2023 Weverse Con Festival</p>
-                    </a>
-                  </li>
+                  {data.shortData &&
+                    data.shortData.map((item, idx) => {
+                      return (
+                        <li key={idx}>
+                          <a href="#!">
+                            <img
+                              src={item && data.shortData[idx].img}
+                              alt=""
+                              className="img"
+                            />
+                            <p className="info">
+                              {item && data.shortData[idx].info}
+                            </p>
+                            <p className="brand">
+                              {" "}
+                              {item && data.shortData[idx].name}
+                            </p>
+                          </a>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
             </div>
