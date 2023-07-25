@@ -8,10 +8,11 @@ const Main = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/data/mock.json`)
+    fetch(`https://clone-naver.vercel.app/data/mock.json`)
       .then((response) => response.json())
       .then((result) => {
         setData(result);
+        console.log(result);
       });
   }, []);
 
@@ -140,29 +141,18 @@ const Main = () => {
                       <li key={idx}>
                         <div className="img-box">
                           <span className="time">
-                            오전 {item && data.shoppingData[idx].time.hours}:{" "}
-                            {item && data.shoppingData[idx].time.minutes}
+                            오전 {item.time.hours}: {item.time.minutes}
                           </span>
-                          <img
-                            src={item && data.shoppingData[idx].img}
-                            alt=""
-                          />
+                          <img src={item.img} alt="" />
                         </div>
                         <div className="info-box">
-                          <div className="title">
-                            {item && data.shoppingData[idx].info}{" "}
-                          </div>
+                          <div className="title">{item.info} </div>
                           <div className="title-sub">정경미 출연</div>
                           <div className="autor">
                             <span className="logo">
-                              <img
-                                src={item && data.shoppingData[idx].user.img}
-                                alt=""
-                              />
+                              <img src={item.user.img} alt="" />
                             </span>
-                            <span className="name">
-                              {item && data.shoppingData[idx].user.name}
-                            </span>
+                            <span className="name">{item.user.name}</span>
                           </div>
                         </div>
                         <button type="button" className="alarm">
@@ -256,22 +246,11 @@ const Main = () => {
                       return (
                         <li key={idx}>
                           <a href="#!">
-                            <span
-                              className={
-                                data.nowData[idx].state && "state live"
-                              }
-                            >
-                              {item && data.nowData[idx].state}
+                            <span className={item.state && "state live"}>
+                              {item.state}
                             </span>
-                            <img
-                              src={item && data.nowData[idx].img}
-                              alt=""
-                              className="img"
-                            />
-                            <p className="info">
-                              {" "}
-                              {item && data.nowData[idx].info}
-                            </p>
+                            <img src={item.img} alt="" className="img" />
+                            <p className="info"> {item.info}</p>
                           </a>
                         </li>
                       );
@@ -295,18 +274,9 @@ const Main = () => {
                       return (
                         <li key={idx}>
                           <a href="#!">
-                            <img
-                              src={item && data.shortData[idx].img}
-                              alt=""
-                              className="img"
-                            />
-                            <p className="info">
-                              {item && data.shortData[idx].info}
-                            </p>
-                            <p className="brand">
-                              {" "}
-                              {item && data.shortData[idx].name}
-                            </p>
+                            <img src={item.img} alt="" className="img" />
+                            <p className="info">{item.info}</p>
+                            <p className="brand"> {item.name}</p>
                           </a>
                         </li>
                       );
