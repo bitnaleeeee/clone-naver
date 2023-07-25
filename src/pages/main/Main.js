@@ -280,7 +280,15 @@ const Main = () => {
                       return (
                         <li key={idx}>
                           <a href="#!">
-                            <span className={item.state && "state live"}>
+                            <span
+                              className={
+                                item.state
+                                  ? item.state === "live"
+                                    ? "state live"
+                                    : "state d-day"
+                                  : null
+                              }
+                            >
                               {item.state}
                             </span>
                             <img src={item.img} alt="" className="img" />
