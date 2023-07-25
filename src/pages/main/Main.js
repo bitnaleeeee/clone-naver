@@ -6,15 +6,15 @@ import "./Main.scss";
 const Main = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [data, setData] = useState([]);
-  const [value, setValue] = useState("");
-  const [bigValue, setBigValue] = useState("");
+  // const [value, setValue] = useState("");
+  // const [bigValue, setBigValue] = useState("");
 
   useEffect(() => {
     fetch(`https://clone-naver.vercel.app/data/mock.json`)
       .then((response) => response.json())
       .then((result) => {
         setData(result);
-        dustResult(result);
+        // dustResult(result);
       });
   }, []);
 
@@ -27,8 +27,18 @@ const Main = () => {
   };
 
   function dustResult(data) {
-    setValue(dust[data.weatherData.dust.value]);
-    setBigValue(dust[data.weatherData.dust.bigValue]);
+    let dust = ["매우 맑음", "맑음", "보통", "나쁨", "매우 나쁨", "최악"];
+    return dust[data.weatherData.dust.value];
+    // setValue(dust[data.weatherData.dust.value]);
+    // setBigValue(dust[data.weatherData.dust.bigValue]);
+  }
+
+  function func(a, b) {
+    let result = false;
+    if (a - b > 0) {
+      result = true;
+    }
+    return result;
   }
 
   function stockResult(data) {
@@ -37,12 +47,11 @@ const Main = () => {
     let answer = str.slice(-2); //두개 2개 문자
     let test = Number(str.slice(0, -2)); //앞에 문자
     let c = test.toLocaleString(); // 콤마 찍은 앞에 수
-
+    debugger;
     let d = String(answer);
     let e = c + "." + d;
     return e;
   }
-  let dust = ["매우 맑음", "맑음", "보통", "나쁨", "매우 나쁨", "최악"];
 
   return (
     <>
@@ -128,8 +137,14 @@ const Main = () => {
                     {data.weatherData && data.weatherData.temperature.position}
                   </div>
                   <div className="info-sub">
-                    미세<span className="state good">{value}</span> · 초미세
-                    <span className="state ">{bigValue}</span>
+                    미세
+                    <span className="state good">
+                      {data.weatherData && dustResult(data)}
+                    </span>{" "}
+                    · 초미세
+                    <span className="state ">
+                      {data.weatherData && dustResult(data)}
+                    </span>
                   </div>
                 </div>
                 <button type="button" className="my-location">
@@ -222,13 +237,13 @@ const Main = () => {
                           <strong className="price">{stockResult(item)}</strong>
                           <div
                             className={
-                              item.value.today - item.value.yesterday > 0
+                              func(item.value.today, item.value.yesterday)
                                 ? "info up"
                                 : "info down"
                             }
                           >
                             <span className="info-sub01">
-                              {item.value.today - item.value.yesterday > 0
+                              {func(item.value.today, item.value.yesterday)
                                 ? "▴"
                                 : "▼"}
                             </span>
