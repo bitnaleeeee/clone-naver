@@ -6,13 +6,16 @@ import "./Main.scss";
 const Main = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [data, setData] = useState([]);
+  const [value, setValue] = useState("");
+  const [bigValue, setBigValue] = useState("");
 
   useEffect(() => {
     fetch(`https://clone-naver.vercel.app/data/mock.json`)
       .then((response) => response.json())
       .then((result) => {
         setData(result);
-        console.log(result);
+        dustResult(result);
+        stockVal(result);
       });
   }, []);
 
@@ -24,9 +27,15 @@ const Main = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  // function dataResult  () {
+  function dustResult(result) {
+    setValue(dust[result.weatherData.dust.value]);
+    setBigValue(dust[result.weatherData.dust.bigValue]);
+  }
+  let dust = ["좋음", "보통", "약간 나쁨", "나쁨", "매우 나쁨"];
 
-  // }
+  function stockVal(result) {
+    console.log(result.stockData);
+  }
 
   return (
     <>
@@ -113,8 +122,8 @@ const Main = () => {
                     {data.weatherData && data.weatherData.temperature.position}
                   </div>
                   <div className="info-sub">
-                    미세<span className="state good">좋음</span> · 초미세
-                    <span className="state ">보통</span>
+                    미세<span className="state good">{value}</span> · 초미세
+                    <span className="state ">{bigValue}</span>
                   </div>
                 </div>
                 <button type="button" className="my-location">
@@ -201,10 +210,10 @@ const Main = () => {
                         <li key={idx}>
                           <strong className="title">
                             {" "}
-                            {item && data.stockData[idx].name}
+                            {item && item.name}
                           </strong>
                           <strong className="price">
-                            {item && data.stockData[idx].value.yesterday}
+                            {item && item.value.today}
                           </strong>
                           <div className="info down">
                             <span className="info-sub01">▼</span>
