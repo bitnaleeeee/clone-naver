@@ -24,6 +24,10 @@ const Main = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  // function dataResult  () {
+
+  // }
+
   return (
     <>
       <Header />
