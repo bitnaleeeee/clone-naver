@@ -15,7 +15,6 @@ const Main = () => {
       .then((result) => {
         setData(result);
         dustResult(result);
-        stockVal(result);
       });
   }, []);
 
@@ -27,20 +26,27 @@ const Main = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  function dustResult(result) {
-    setValue(dust[result.weatherData.dust.value]);
-    setBigValue(dust[result.weatherData.dust.bigValue]);
+  function dustResult(data) {
+    setValue(dust[data.weatherData.dust.value]);
+    setBigValue(dust[data.weatherData.dust.bigValue]);
   }
-  let dust = ["좋음", "보통", "약간 나쁨", "나쁨", "매우 나쁨"];
 
-  function stockVal(result) {
-    console.log(result.stockData);
+  function stockResult(data) {
+    let a = data.value.today;
+    let str = String(a); //스트링 형태임
+    let answer = str.slice(-2); //두개 2개 문자
+    let test = Number(str.slice(0, -2)); //앞에 문자
+    let c = test.toLocaleString(); // 콤마 찍은 앞에 수
+
+    let d = String(answer);
+    let e = c + "." + d;
+    return e;
   }
+  let dust = ["매우 맑음", "맑음", "보통", "나쁨", "매우 나쁨", "최악"];
 
   return (
     <>
       <Header />
-
       <SearchPopup
         isPopupOpen={isPopupOpen}
         openSearchPopup={openSearchPopup}
@@ -206,19 +212,34 @@ const Main = () => {
                 <ul className="stock-list-inner">
                   {data.stockData &&
                     data.stockData.map((item, idx) => {
+                      console.log(item);
                       return (
                         <li key={idx}>
                           <strong className="title">
                             {" "}
                             {item && item.name}
                           </strong>
-                          <strong className="price">
-                            {item && item.value.today}
-                          </strong>
-                          <div className="info down">
-                            <span className="info-sub01">▼</span>
-                            <span className="info-sub02">23.60</span>
-                            <span className="info-sub03">-0.91%</span>
+                          <strong className="price">{stockResult(item)}</strong>
+                          <div
+                            className={
+                              item.value.today - item.value.yesterday > 0
+                                ? "info up"
+                                : "info down"
+                            }
+                          >
+                            <span className="info-sub01">
+                              {item.value.today - item.value.yesterday > 0
+                                ? "▴"
+                                : "▼"}
+                            </span>
+                            <span className="info-sub02">
+                              {item.value.today - item.value.yesterday}
+                            </span>
+                            <span className="info-sub03">
+                              {(item.value.today - item.value.yesterday) *
+                                0.01 +
+                                "%"}
+                            </span>
                           </div>
                         </li>
                       );
