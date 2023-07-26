@@ -1,0 +1,40 @@
+$url-bg-btn: "https://s.pstatic.net/static/www/m-new/uit/img/sp_main_search_f19096e8.png";
+$url-bg-weather: "https://s.pstatic.net/static/www/m-new/uit/img/sp_weather_animation_05cf64fb.png";
+$url-bg-ico: "https://s.pstatic.net/static/www/m-new/uit/img/sp_search_87bada1f.png";
+
+.grid-box.naver-ad-box {
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px 50px 0 70px;
+  height: 80px;
+  line-height: 1.4;
+
+  .logo-img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: url($url-bg-ico) no-repeat;
+    background-size: 400px auto;
+    background-position: -214px -90px;
+  }
+
+  .info {
+    strong {
+      font-weight: bold;
+    }
+
+    span {
+      color: #767678;
+    }
+  }
+
+  .link {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #03c95b;
+  }
+}

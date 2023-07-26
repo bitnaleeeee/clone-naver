@@ -1,0 +1,73 @@
+$url-bg-btn: "https://s.pstatic.net/static/www/m-new/uit/img/sp_main_search_f19096e8.png";
+$url-bg-weather: "https://s.pstatic.net/static/www/m-new/uit/img/sp_weather_animation_05cf64fb.png";
+$url-bg-ico: "https://s.pstatic.net/static/www/m-new/uit/img/sp_search_87bada1f.png";
+
+.now-box {
+  .now-list {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 -20px;
+    padding: 0 20px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .now-list-inner {
+      width: 540px;
+
+      & > li {
+        float: left;
+        margin-right: 10px;
+
+        a {
+          display: block;
+          position: relative;
+          width: 100px;
+
+          .state {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            border-radius: 10px;
+            padding: 0 5px;
+            height: 16px;
+            line-height: 18px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #fff;
+
+            &.d-day {
+              background: #3c29df;
+            }
+
+            &.live {
+              background: #f4361e;
+            }
+          }
+
+          .img {
+            border-radius: 5px;
+            width: 100%;
+          }
+
+          .info {
+            margin-top: 10px;
+            line-height: 1.4;
+            font-size: 15px;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+}

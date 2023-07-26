@@ -1,0 +1,136 @@
+$url-bg-btn: "https://s.pstatic.net/static/www/m-new/uit/img/sp_main_search_f19096e8.png";
+$url-bg-weather: "https://s.pstatic.net/static/www/m-new/uit/img/sp_weather_animation_05cf64fb.png";
+$url-bg-ico: "https://s.pstatic.net/static/www/m-new/uit/img/sp_search_87bada1f.png";
+
+.grid-box.shopping-box {
+  .shopping-list {
+    & > li {
+      position: relative;
+      margin-top: 15px;
+      padding: 0 30px 0 100px;
+      min-height: 90px;
+
+      .img-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 88px;
+
+        .time {
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          border-radius: 5px;
+          padding: 2px 5px;
+          font-size: 11px;
+          background: rgba(0, 0, 0, 0.3);
+          color: #fff;
+        }
+
+        img {
+          display: block;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+
+      .info-box {
+        width: 100%;
+
+        .title {
+          line-height: 1.4;
+        }
+
+        .title-sub {
+          margin-top: 2px;
+          font-size: 12px;
+          color: #5453e8;
+        }
+
+        .autor {
+          margin-top: 10px;
+
+          .logo {
+            display: inline-block;
+            overflow: hidden;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            vertical-align: middle;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .name {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .alarm {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        border: 1px solid #f4361e;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background: none;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 18px;
+          height: 14px;
+          background: url($url-bg-ico) no-repeat;
+          background-size: 400px auto;
+          background-position: -380px -268px;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  .shopping-ad {
+    margin-top: 15px;
+    height: 44px;
+    border-radius: 22px;
+    padding: 0 15px;
+    line-height: 44px;
+    text-align: center;
+    background: #f5f8fb;
+
+    .img {
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .info {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+  }
+}

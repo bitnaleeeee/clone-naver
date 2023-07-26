@@ -1,4 +1,5 @@
 import { React } from "react";
+import "./WeatherBox.scss";
 
 const WeatherBox = (props) => {
   const { data } = props;

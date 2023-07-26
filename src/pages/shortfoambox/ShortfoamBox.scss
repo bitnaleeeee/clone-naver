@@ -1,0 +1,66 @@
+.short-form-box {
+  .short-form-list {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 -20px;
+    padding: 0 20px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .short-form-list-inner {
+      width: 740px;
+
+      & > li {
+        float: left;
+        margin-right: 10px;
+
+        a {
+          display: block;
+          position: relative;
+          width: 140px;
+
+          .img {
+            border-radius: 5px;
+            width: 100%;
+          }
+
+          .info {
+            margin-top: 10px;
+            line-height: 1.4;
+            font-size: 15px;
+
+            // 말줄임
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+
+          .brand {
+            margin-top: 5px;
+            font-size: 13px;
+            color: #929294;
+
+            // 말줄임
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+}

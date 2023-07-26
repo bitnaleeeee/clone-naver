@@ -1,0 +1,86 @@
+// url
+$url-bg-btn: "https://s.pstatic.net/static/www/m-new/uit/img/sp_main_search_f19096e8.png";
+$url-bg-weather: "https://s.pstatic.net/static/www/m-new/uit/img/sp_weather_animation_05cf64fb.png";
+$url-bg-ico: "https://s.pstatic.net/static/www/m-new/uit/img/sp_search_87bada1f.png";
+
+.weather-box {
+  .weather-inner {
+    position: relative;
+
+    .bg-img {
+      float: left;
+      margin-right: 10px;
+      width: 50px;
+      height: 40px;
+      background: url($url-bg-weather) no-repeat;
+      background-size: 425px auto;
+      background-position: -133px -134px;
+    }
+
+    .info {
+      float: left;
+
+      .info-title {
+        font-size: 18px;
+        font-weight: bold;
+
+        .temperature {
+          margin-right: 3px;
+          font-size: 20px;
+        }
+      }
+
+      .info-sub {
+        margin-top: 5px;
+        font-size: 13px;
+
+        .state {
+          margin-left: 3px;
+          color: #00d01d;
+
+          &.good {
+            color: #00a8ff;
+          }
+        }
+      }
+    }
+
+    .my-location {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      border: none;
+      padding-right: 25px;
+      background: none;
+      font-size: 15px;
+      color: #767678;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background: url($url-bg-ico) no-repeat;
+        background-size: 400px auto;
+        background-position: -380px -206px;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  .weather-guide {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 15px;
+    color: #767678;
+  }
+}
