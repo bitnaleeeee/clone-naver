@@ -1,12 +1,12 @@
 import React from "react";
-import './Header.scss';
+import "./Header.scss";
 
 const Header = () => {
   return (
     <header className="header" id="header">
       {/* 홈버튼 */}
       <button type="button" className="home-menu-btn">
-          <span className="blind">홈메뉴</span>
+        <span className="blind">홈메뉴</span>
       </button>
 
       {/* 유틸메뉴 */}

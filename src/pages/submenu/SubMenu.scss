@@ -1,0 +1,30 @@
+.sub-menu-wrap {
+  margin: 30px auto 0;
+  width: 320px;
+
+  .sub-menu-list {
+    text-align: center;
+
+    & > li {
+      display: inline-block;
+      padding: 0 0 15px 40px;
+
+      &:nth-of-type(4n + 1) {
+        padding-left: 0;
+      }
+
+      & > a {
+        display: block;
+        width: 44px;
+
+        img {
+          width: 100%;
+        }
+
+        span {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

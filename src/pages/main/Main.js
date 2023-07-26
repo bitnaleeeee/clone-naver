@@ -1,20 +1,20 @@
 import { React, useEffect, useState } from "react";
 import Header from "../../components/Header";
 import SearchPopup from "../../popup/SearchPopup";
+import SubMenu from "../submenu/SubMenu";
+import SearchBar from "../searchbar/SearchBar";
+import WeatherBox from "../weatherbox/WeatherBox";
 import "./Main.scss";
 
 const Main = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [data, setData] = useState([]);
-  // const [value, setValue] = useState("");
-  // const [bigValue, setBigValue] = useState("");
 
   useEffect(() => {
     fetch(`https://clone-naver.vercel.app/data/mock.json`)
       .then((response) => response.json())
       .then((result) => {
         setData(result);
-        // dustResult(result);
       });
   }, []);
 
@@ -25,13 +25,6 @@ const Main = () => {
   const openSearchPopup = (e) => {
     setIsPopupOpen(!isPopupOpen);
   };
-
-  function dustResult(data) {
-    let dust = ["매우 맑음", "맑음", "보통", "나쁨", "매우 나쁨", "최악"];
-    return dust[data.weatherData.dust.value];
-    // setValue(dust[data.weatherData.dust.value]);
-    // setBigValue(dust[data.weatherData.dust.bigValue]);
-  }
 
   function func(a, b) {
     let result = false;
@@ -61,58 +54,8 @@ const Main = () => {
         openSearchPopup={openSearchPopup}
       />
       <main className="main">
-        <div className="search-wrap">
-          <div className="search-box">
-            <div className="search-inner">
-              <h1 className="search-logo">
-                <a href="#!">
-                  <span className="blind">네이버</span>
-                </a>
-              </h1>
-              <input
-                type="text"
-                className="search-input"
-                title="검색어 입력"
-                placeholder="검색어를 입력해주세요."
-                onFocus={openSearchPopup}
-                // onBlur={onBlurSearchInput}
-              />
-              <button type="button" className="search-voice-btn">
-                <span className="blind">음성검색</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="sub-menu-wrap">
-          <ul className="sub-menu-list">
-            {data.subMenu &&
-              data.subMenu.map((item, idx) => {
-                return (
-                  <li key={idx}>
-                    <a href="#!">
-                      <img src={item.imgSrc} alt="" />
-                      <span>{item.name}</span>
-                    </a>
-                  </li>
-                );
-              })}
-
-            {/* 
-            {data.subMenu &&
-              data.subMenu.map((item, idx) => {
-                console.log(item);
-              })}
-
-            {data.subMenu
-              ? data.subMenu.map((item, idx) => {
-                  console.log(item);
-                })
-              : ""} 
-              */}
-          </ul>
-        </div>
-
+        <SearchBar openSearchPopup={openSearchPopup} />
+        <SubMenu data={data} />
         <div className="hone-ad">
           <a href="#!">
             <img
@@ -125,37 +68,7 @@ const Main = () => {
         <div className="grid-wrap">
           {/* 왼쪽 컬럼 */}
           <div className="grid-vertical">
-            <div className="grid-box weather-box">
-              <div className="weather-inner">
-                <div className="bg-img"></div>
-                <div className="info">
-                  <div className="info-title">
-                    <span className="temperature">
-                      {" "}
-                      {data.weatherData && data.weatherData.temperature.value}
-                    </span>
-                    {data.weatherData && data.weatherData.temperature.position}
-                  </div>
-                  <div className="info-sub">
-                    미세
-                    <span className="state good">
-                      {data.weatherData && dustResult(data)}
-                    </span>{" "}
-                    · 초미세
-                    <span className="state ">
-                      {data.weatherData && dustResult(data)}
-                    </span>
-                  </div>
-                </div>
-                <button type="button" className="my-location">
-                  내 위치 찾기
-                </button>
-              </div>
-              <p className="weather-guide">
-                위치 찾기를 눌러 현 위치의 시간대별·주간날씨와 미세먼지 예보를
-                여기에서 바로 보세요
-              </p>
-            </div>
+            <WeatherBox data={data} />
 
             <div className="grid-box shopping-box">
               <div className="title-wrap">
