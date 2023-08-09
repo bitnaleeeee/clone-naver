@@ -35,7 +35,7 @@
         }
     ],
     "weatherData": {
-        "img": "https://s.pstatic.net/static/www/m-new/uit/img/sp_weather_animation_05cf64fb.png",
+        "img": "/common/images/sp_weather_animation.png",
         
         "temperature": {
             "position": "서울",

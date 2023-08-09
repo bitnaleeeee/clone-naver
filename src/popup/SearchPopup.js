@@ -23,7 +23,8 @@ const SearchPopup = (props) => {
    */
   const callAPI = (params) => {
     axios
-      .get(`https://json-server-beryl.vercel.app/api/sick?q=${params}`)
+    // .get(`http://localhost:5000/data?q=${params}`)
+    .get(`https://json-server-beryl.vercel.app/api/sick?q=${params}`)
       .then((respon) => {
         console.log("Respon", respon);
         setHighlight(respon.data, params);
@@ -43,12 +44,12 @@ const SearchPopup = (props) => {
     let responData = data;
     responData.forEach(function (item) {
       let regex = new RegExp(params, "gi");
-      let result = item.sickNm.replace(
+      let result = item.name.replace(
         regex,
         "<strong>" + params + "</strong>"
       );
       newData.push({
-        sickNm: result,
+        name: result,
       });
     });
     setSearchData(newData);
@@ -110,7 +111,7 @@ const SearchPopup = (props) => {
                       <a
                         href="#!"
                         className="text"
-                        dangerouslySetInnerHTML={{ __html: item.sickNm }}
+                        dangerouslySetInnerHTML={{ __html: item.name }}
                       />
                       <button type="button" className="auto-set-btn">
                         <span className="blind">키워드 자동완성</span>
